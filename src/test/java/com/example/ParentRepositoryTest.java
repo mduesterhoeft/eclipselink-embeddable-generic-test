@@ -18,15 +18,11 @@ public class ParentRepositoryTest {
     @Test
     public void should_save_parent() {
         Parent parent = new Parent();
-        ValueHolder<PercentageValue> percentageValueValueHolder = new ValueHolder<>();
 
         PercentageValue percentageValue = new PercentageValue();
         percentageValue.setPercentageValue(BigDecimal.TEN);
-        percentageValueValueHolder.setValue(percentageValue);
 
-        percentageValueValueHolder.setValue(percentageValue);
-
-        parent.setValueHolder(percentageValueValueHolder);
+        parent.setValue(percentageValue);
 
         parentRepository.saveAndFlush(parent);
 

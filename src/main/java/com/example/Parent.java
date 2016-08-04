@@ -8,23 +8,21 @@ import javax.persistence.Id;
 
 @Entity
 public class Parent {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Embedded
-    private ValueHolder<? extends Value> valueHolder;
+    private Value value;
 
     public Long getId() {
         return id;
     }
 
-    public ValueHolder<? extends Value> getValueHolder() {
-        return valueHolder;
+    public Value getValue() {
+        return value;
     }
 
-    public void setValueHolder(ValueHolder<? extends Value> valueHolder) {
-        this.valueHolder = valueHolder;
+    public void setValue(Value value) {
+        this.value = value;
     }
 }

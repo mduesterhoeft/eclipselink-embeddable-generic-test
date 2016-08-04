@@ -51,10 +51,9 @@ public class ParentRestIntegrationTest {
     @Test
     public void should_create_percentage_value() throws Exception {
         Map<Object, Object> jsonMap = ImmutableMap.builder()
-                .put("valueHolder", ImmutableMap.of(
-                        "value", ImmutableMap.of(
+                .put("value", ImmutableMap.of(
                                 "type", "PERCENTAGE",
-                                "percentageValue", 0.95d)))
+                                "percentageValue", 0.95d))
                 .build();
 
         mockMvc.perform(
@@ -64,8 +63,8 @@ public class ParentRestIntegrationTest {
                         .content(objectMapper.writeValueAsString(jsonMap)))
                 .andDo(print())
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("valueHolder.value.type", equalTo("PERCENTAGE")))
-                .andExpect(jsonPath("valueHolder.value.percentageValue", equalTo(0.95d)))
+                .andExpect(jsonPath("value.type", equalTo("PERCENTAGE")))
+                .andExpect(jsonPath("value.percentageValue", equalTo(0.95d)))
         ;
     }
 

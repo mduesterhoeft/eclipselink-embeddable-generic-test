@@ -24,10 +24,9 @@ public class ParentInitializer implements ApplicationRunner {
     private void addPercentageParent() {
         Parent parent = new Parent();
         ValueHolder<PercentageValue> percentageValueValueHolder = new ValueHolder<>();
-        percentageValueValueHolder.setType("PERCENTAGE");
 
         PercentageValue percentageValue = new PercentageValue();
-        percentageValue.setPercentageValue(BigDecimal.TEN);
+        percentageValue.setPercentageValue(BigDecimal.valueOf(0.95));
         percentageValueValueHolder.setValue(percentageValue);
 
         percentageValueValueHolder.setValue(percentageValue);
@@ -40,7 +39,6 @@ public class ParentInitializer implements ApplicationRunner {
     private void addAbsoluteParent() {
         Parent parent = new Parent();
         ValueHolder<AbsoluteValue> absoluteValueHolder = new ValueHolder<>();
-        absoluteValueHolder.setType("ABSOLUTE");
 
         AbsoluteValue absoluteValue = new AbsoluteValue();
         absoluteValue.setAbsoluteValue(99L);

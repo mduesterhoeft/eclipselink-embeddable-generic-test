@@ -19,7 +19,6 @@ public class ParentRepositoryTest {
     public void should_save_parent() {
         Parent parent = new Parent();
         ValueHolder<PercentageValue> percentageValueValueHolder = new ValueHolder<>();
-        percentageValueValueHolder.setType("PERCENTAGE");
 
         PercentageValue percentageValue = new PercentageValue();
         percentageValue.setPercentageValue(BigDecimal.TEN);
